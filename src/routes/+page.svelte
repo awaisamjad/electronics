@@ -1,2 +1,10 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import { goto } from '$app/navigation';
+	function goto_resistor_resistance_calculator() {
+		goto('/Resistor_Resistance_Calculator');
+	}
+</script>
+
+<h1>Electronics Page</h1>
+<button on:click={goto_resistor_resistance_calculator}>Click me</button>
+
