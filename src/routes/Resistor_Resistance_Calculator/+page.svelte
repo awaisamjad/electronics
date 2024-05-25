@@ -24,7 +24,7 @@
 		}
 	}
 
-	let value_to_colour = {
+	const value_to_colour = {
 		0: '#141412',
 		1: '#744418',
 		2: '#A71717',
@@ -37,7 +37,7 @@
 		9: '#FAFAFA'
 	};
 
-	let band4_value_to_colour = {
+	const band4_value_to_colour = {
 		0: '#d9bb7a',
 		1: '#744418',
 		2: '#A71717',
@@ -137,7 +137,7 @@
 		</div>
 	</div>
 	<div class="band-info-display">
-		<p id="band1-info-display">Band 1: {band1}</p> 
+		<p id="band1-info-display">Band 1: {band1}</p>
 		<p id="band2-info-display">Band 2: {band2 * 10}</p>
 		<p id="band3-info-display">Band 3: {band3}</p>
 		<p id="band4-info-display">Band 4: ±{band4}%</p>
@@ -148,9 +148,9 @@
 	<p>Resistance: {resistanceResult}</p>
 
 	<!-- SVG -->
-	<div id="resistor-div">
+	<div class="resistor-div">
 		<!-- svelte-ignore illegal-attribute-character -->
-		<svg width="2160" height="1080" id="resistor">
+		<svg width="21600" height="1080" id="resistor">
 			<defs id="defs4" />
 
 			<sodipodi:namedview
@@ -208,7 +208,7 @@
 						id="rect3796"
 						transform="translate(0,-27.6403)"
 						d="M 798.5625 228.5625 C 794.83997 228.5625 791.30046 228.67303 787.90625 228.90625 L 787.90625 511.1875 C 791.31332 511.35148 794.85648 511.4375 798.5625 511.4375 C 799.29806 511.4375 800.09011 511.404 800.875 511.375 C 802.30233 511.404 803.74224 511.4375 805.21875 511.4375 C 817.35302 511.4375 836.39057 507.29016 856.625 502.34375 L 856.625 237.65625 C 836.39057 232.70984 817.35302 228.5625 805.21875 228.5625 C 803.72122 228.5625 802.2599 228.597 800.8125 228.625 C 800.04576 228.596 799.28581 228.5625 798.5625 228.5625 z "
-						style="fill:{value_to_colour[band1]};fill-opacity:1;stroke:#986601"
+						style="fill:{value_to_colour[band1]};fill-opacity:1;"
 					/>
 					<path
 						id="rect3798"
@@ -216,13 +216,13 @@
 						d="M 901.0625 248.5625 L 901.0625 491.4375 C 915.3171 488.17202 927.92103 485.8125 936.40625 485.8125 L 969.75 485.8125 L 969.75 254.1875 L 936.40625 254.1875 C 927.92103 254.1875 915.3171 251.82798 901.0625 248.5625 z "
 						style="fill:{value_to_colour[
 							band2
-						]};fill-opacity:1;stroke:#430086;stroke-width:0.99000000000000021;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+						]};fill-opacity:1;stroke-width:0.99000000000000021;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
 					/>
 					<path
 						id="rect3800"
 						transform="translate(0,-27.6403)"
 						d="M 1014.1875 254.1875 L 1014.1875 485.8125 L 1082.875 485.8125 L 1082.875 254.1875 L 1014.1875 254.1875 z "
-						style="fill:{value_to_colour[band3]};fill-opacity:1;stroke:#980101"
+						style="fill:{value_to_colour[band3]};fill-opacity:1;"
 					/>
 					<path
 						id="rect3819"
@@ -266,7 +266,12 @@
 		border: none;
 		border-radius: 2px;
 	}
-
+	.resistor-div {
+		/* outline: 5px solid red; */
+		display: flex;
+    justify-content: center;
+    align-items: center;
+	}
 	#select-band4 {
 		/* background-color: {band4_value_to_colour[band4]}; */
 	}
